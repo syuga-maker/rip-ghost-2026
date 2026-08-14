@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>好久不见，我的老朋友</title>
+    <title>✞ R·I·P·G ✞</title>
     <style>
         * {
             margin: 0;
@@ -654,6 +654,15 @@
     <audio id="bgm" src="music.mp3"></audio>
 
     <script>
+		
+		// 图片预加载函数
+function preloadGalleryImages() {
+    galleryImages.forEach((imgObj) => {
+        const img = new Image();
+        img.src = imgObj.src; // 浏览器自动下载并缓存
+    });
+}
+		
         const fullText = "好久不见，我的老朋友";
         const typedTextSpan = document.getElementById("typed-text");
         const dotsSpan = document.getElementById("dots");
@@ -863,11 +872,12 @@
         let discoveredClues = new Set();
         let isMonologueUnlocked = false;
 
-        function openGalleryModal() { 
-            closeAllModals(); 
-            updateGalleryDisplay(); 
-            document.getElementById("gallery-modal").classList.add("active"); 
-        }
+      function openGalleryModal() {
+    closeAllModals();
+    preloadGalleryImages(); // 触发图片预加载
+    updateGalleryDisplay();
+    document.getElementById("gallery-modal").classList.add("active");
+}
 
         function switchGalleryImg(direction) {
             currentGalleryIdx = (currentGalleryIdx + direction + galleryImages.length) % galleryImages.length;
