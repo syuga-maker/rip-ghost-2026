@@ -511,9 +511,9 @@
             <div id="music-widget" class="music-widget">
                 <div class="music-expanded-pill">
                     <span id="player-song-title" class="pill-song-title">Let It Be</span>
-                    <button class="pill-btn" onclick="switchSong(-1)">⏮</button>
-                    <button id="play-toggle-btn" class="pill-btn" onclick="togglePlay()">⏸</button>
-                    <button class="pill-btn" onclick="switchSong(1)">⏭</button>
+                    <button class="pill-btn" onclick="switchSong(-1)">«</button>
+                    <button id="play-toggle-btn" class="pill-btn" onclick="togglePlay()">⫴</button>
+                    <button class="pill-btn" onclick="switchSong(1)">»</button>
                 </div>
                 <button class="nav-icon-btn" onclick="toggleMusicDrawer()"><img src="icon_music.png" alt="音乐"></button>
             </div>
@@ -738,7 +738,7 @@ function preloadGalleryImages() {
             updatePlayBtn();
         }
 		
-        function updatePlayBtn() { document.getElementById("play-toggle-btn").innerText = isPlaying ? "⏸" : "▶"; }
+        function updatePlayBtn() { document.getElementById("play-toggle-btn").innerText = isPlaying ? "⫴" : "►"; }
 		
 		
       //  切换音乐的逻辑
